@@ -9,11 +9,10 @@
     <version>1.0.7</version>
   </parent>
 
-  <groupId>my.pet.project</groupId>
+  <groupId>denver.brewery</groupId>
   <artifactId>my-order-service</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>my-order-service</name>
-  <description>Order Service</description>
+  <version>1.0.0</version>
+  <name>order-service</name>
 
   <dependencies>
     <dependency>

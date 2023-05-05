@@ -18,9 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 import java.util.UUID;
 
-/**
- * Created by jt on 11/30/19.
- */
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -40,7 +37,7 @@ public class BeerOrderStateChangeInterceptor extends StateMachineInterceptorAdap
 
                     BeerOrder beerOrder = beerOrderRepository.getOne(UUID.fromString(orderId));
                     beerOrder.setOrderStatus(state.getId());
-                    beerOrderRepository.save(beerOrder);
+                    beerOrderRepository.saveAndFlush(beerOrder);
                 });
     }
 }

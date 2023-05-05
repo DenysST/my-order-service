@@ -10,9 +10,6 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Optional;
 import java.util.UUID;
 
-/**
- * Created by jt on 2019-06-09.
- */
 @Profile("!local-discovery")
 @ConfigurationProperties(prefix = "sfg.brewery", ignoreUnknownFields = false)
 @Service

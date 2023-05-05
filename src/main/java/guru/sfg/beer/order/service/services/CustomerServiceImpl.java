@@ -13,9 +13,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
 
-/**
- * Created by jt on 3/7/20.
- */
 @Slf4j
 @Service
 @RequiredArgsConstructor

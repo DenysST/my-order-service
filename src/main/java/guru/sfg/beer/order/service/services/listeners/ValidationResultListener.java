@@ -11,9 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
-/**
- * Created by jt on 12/2/19.
- */
 @Slf4j
 @RequiredArgsConstructor
 @Component

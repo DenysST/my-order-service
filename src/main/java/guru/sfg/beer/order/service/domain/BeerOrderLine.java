@@ -22,6 +22,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -47,7 +48,7 @@ public class BeerOrderLine extends BaseEntity {
         this.quantityAllocated = quantityAllocated;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private BeerOrder beerOrder;
 
     private UUID beerId;

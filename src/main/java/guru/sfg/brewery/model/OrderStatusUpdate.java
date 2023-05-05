@@ -19,6 +19,10 @@ package guru.sfg.brewery.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import guru.sfg.brewery.model.serializers.OffsetDateTimeDeserializer;
+import guru.sfg.brewery.model.serializers.OffsetDateTimeToStringSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -38,11 +42,13 @@ public class OrderStatusUpdate {
     @JsonProperty("version")
     private Integer version = null;
 
-    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ssZ", shape=JsonFormat.Shape.STRING)
+    @JsonSerialize(using = OffsetDateTimeToStringSerializer.class)
+    @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
     @JsonProperty("createdDate")
     private OffsetDateTime createdDate = null;
 
-    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ssZ", shape=JsonFormat.Shape.STRING)
+    @JsonSerialize(using = OffsetDateTimeToStringSerializer.class)
+    @JsonDeserialize(using = OffsetDateTimeDeserializer.class)
     @JsonProperty("lastModifiedDate")
     private OffsetDateTime lastModifiedDate = null;
 
